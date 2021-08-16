@@ -93,7 +93,7 @@ namespace NoticiasWinForms
             this.label4.Size = new System.Drawing.Size(87, 19);
             this.label4.TabIndex = 1;
             this.label4.Text = "Contenido:";
-            this.label4.Click += new System.EventHandler(this.label4_Click);
+            
             // 
             // label5
             // 
@@ -265,7 +265,7 @@ namespace NoticiasWinForms
             this.btnCancelar.UseVisualStyleBackColor = true;
             this.btnCancelar.Click += new System.EventHandler(this.btnCancelar_Click);
             // 
-            // RegistroArticulos
+            // RegistrarArticulos
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 19F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -295,9 +295,10 @@ namespace NoticiasWinForms
             this.Controls.Add(this.blTitulo);
             this.Controls.Add(this.label1);
             this.Font = new System.Drawing.Font("Constantia", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.Name = "RegistroArticulos";
+            this.Name = "RegistrarArticulos";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "REGISTRO DE ARTICULOS";
+            this.Load += new System.EventHandler(this.RegistrarArticulos_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
