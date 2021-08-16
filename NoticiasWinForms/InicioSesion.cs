@@ -44,7 +44,7 @@ namespace NoticiasWinForms
 
             if (response.StatusCode == System.Net.HttpStatusCode.OK)
             {
-                var responseObject = JsonConvert.DeserializeObject<Token>(responseTest);
+                var responseObject = JsonConvert.DeserializeObject<AuthResponse>(responseTest);
 
             }
             else if (response.StatusCode == System.Net.HttpStatusCode.BadRequest)
@@ -60,7 +60,7 @@ namespace NoticiasWinForms
         }
 
 
-        public class Token
+        public class AuthResponse
         {
             public string token { get; set; }
             public int expires_in { get; set; }
@@ -75,37 +75,40 @@ namespace NoticiasWinForms
             {
                 httpClient.BaseAddress = new Uri("https://localhost:44340/");
             }
-            public AuthResponse Authenticate(string username, string password)
-            {
+            //public void Authenticate(string username, string password)
+            //{
 
-                var formData = new MultipartFormDataContent("Upload..." + DateTime.Now.ToString(CultureInfo.InvariantCulture));
-                formData.Add(new StringContent(username), "nombreUsuario");
-                formData.Add(new StringContent(password), "contrasena");
+            //    var formData = new MultipartFormDataContent("Upload..." + DateTime.Now.ToString(CultureInfo.InvariantCulture));
+            //    formData.Add(new StringContent(username), "nombreUsuario");
+            //    formData.Add(new StringContent(password), "contrasena");
 
-                var response = httpClient.PostAsync("/api/InicioSesion/authenticate", formData).Result;
-                var responseTest = response.Content.ReadAsStringAsync().Result;
+            //    var response = httpClient.PostAsync("/api/InicioSesion/authenticate", formData).Result;
+            //    var responseTest = response.Content.ReadAsStringAsync().Result;
+
+            //    try
+            //    {
+            //        if (response.StatusCode == System.Net.HttpStatusCode.OK)
+            //        {
+            //            var responseObject = JsonConvert.DeserializeObject<AuthResponse>(responseTest);
 
 
-                if (response.StatusCode == System.Net.HttpStatusCode.OK)
-                {
-                    var responseObject = JsonConvert.DeserializeObject<AuthResponse>(responseTest);
+            //            MenuPrincipal menu = new MenuPrincipal();
+            //            menu.ShowDialog();
 
-                   
-                    MenuPrincipal menu = new MenuPrincipal();
-                    menu.ShowDialog();
-
-                    return responseObject;
-                }
-                else if (response.StatusCode == System.Net.HttpStatusCode.BadRequest)
-                {
-                    MessageBox.Show("Valor inválido", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                    throw new UnauthorizedAccessException("Login Invalid");
-                }
-                else
-                {
-                    throw new ApplicationException("Internal Server Error");
-                }
-            }
+            //            //return responseObject;
+            //        }
+            //        else if (response.StatusCode == System.Net.HttpStatusCode.BadRequest)
+            //        {
+            //            MessageBox.Show("Valor inválido", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            //            //throw new UnauthorizedAccessException("Login Invalid");
+            //        }
+            //    }
+            //    catch (Exception)
+            //    {
+            //        throw new ApplicationException("Internal Server Error");
+                    
+            //    }
+            //}
         }
 
         private void btnAcceder_Click(object sender, EventArgs e)
@@ -119,18 +122,65 @@ namespace NoticiasWinForms
             
             else
             {
-                NoticiasClient client = new NoticiasClient();
-
+                //NoticiasClient client = new NoticiasClient();
+                
                 //dm var auth = client.Authenticate("admin", "admin1");
-                var auth = client.Authenticate(txtUsuario.Text, txtContrasena.Text);
+                authentic(txtUsuario.Text,txtContrasena.Text);
             }
-
+            
             
         }
+
+        //private void Authenticate(string text1, string text2)
+        //{
+        //    throw new NotImplementedException();
+        //}
 
         private void InicioSesion_Load(object sender, EventArgs e)
         {
 
+        }
+
+       
+    
+    private void authentic(string username, string password)
+        {
+
+         
+            HttpClient httpClient = new HttpClient();
+
+            httpClient.BaseAddress = new Uri("https://localhost:44340/");
+            var formData = new MultipartFormDataContent("Upload..." + DateTime.Now.ToString(CultureInfo.InvariantCulture));
+            formData.Add(new StringContent(username), "nombreUsuario");
+            formData.Add(new StringContent(password), "contrasena");
+       
+            var response = httpClient.PostAsync("/api/InicioSesion/authenticate", formData).Result;
+            var responseTest = response.Content.ReadAsStringAsync().Result;
+
+            try
+            {
+                if (response.StatusCode == System.Net.HttpStatusCode.OK)
+                {
+                    var responseObject = JsonConvert.DeserializeObject<AuthResponse>(responseTest);
+
+
+                    MenuPrincipal menu = new MenuPrincipal();
+                    menu.ShowDialog();
+
+                    //return responseObject;
+                }
+                else if (response.StatusCode == System.Net.HttpStatusCode.BadRequest)
+                {
+                    MessageBox.Show("Valor inválido", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    //throw new UnauthorizedAccessException("Login Invalid");
+                }
+            }
+            catch (Exception)
+            {
+                throw new ApplicationException("Internal Server Error");
+
+            }
+        
         }
     }
 }

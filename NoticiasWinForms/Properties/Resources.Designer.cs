@@ -83,6 +83,16 @@ namespace NoticiasWinForms.Properties {
         /// <summary>
         ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap business_application_addmale_useradd_insert_add_user_client_2312 {
+            get {
+                object obj = ResourceManager.GetObject("business_application_addmale_useradd_insert_add_user_client_2312", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap cooperation_1301850_960_720 {
             get {
                 object obj = ResourceManager.GetObject("cooperation-1301850_960_720", resourceCulture);
@@ -104,6 +114,26 @@ namespace NoticiasWinForms.Properties {
         /// <summary>
         ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap discovery_icon {
+            get {
+                object obj = ResourceManager.GetObject("discovery-icon", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap image_icon_delete_pic_512x512 {
+            get {
+                object obj = ResourceManager.GetObject("image_icon_delete_pic_512x512", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap images {
             get {
                 object obj = ResourceManager.GetObject("images", resourceCulture);
@@ -117,6 +147,17 @@ namespace NoticiasWinForms.Properties {
         internal static System.Drawing.Bitmap imgNoticias {
             get {
                 object obj = ResourceManager.GetObject("imgNoticias", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap kisspng_computer_icons_pencil_drawing_symbol_edit_and_release_5adebde895c257_0318660915245470486134 {
+            get {
+                object obj = ResourceManager.GetObject("kisspng-computer-icons-pencil-drawing-symbol-edit-and-release-5adebde895c257.0318" +
+                        "660915245470486134", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

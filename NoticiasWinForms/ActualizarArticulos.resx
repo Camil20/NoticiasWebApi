@@ -117,38 +117,4 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
-  <data name="png-transparent-category-management-organization-retail-management-miscellaneous-text-retail" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\png-transparent-category-management-organization-retail-management-miscellaneous-text-retail.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="cso_binary_code_inspection_magnifying_lens_by_andreus_gettyimages-1128503636_2400x1600-100813840-large" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\cso_binary_code_inspection_magnifying_lens_by_andreus_gettyimages-1128503636_2400x1600-100813840-large.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="48f997ae7a801924cde1d5d849291c8e" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\48f997ae7a801924cde1d5d849291c8e.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="brazilian-authors-literature" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\brazilian-authors-literature.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="images" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\images.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="discovery-icon" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\discovery-icon.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="cooperation-1301850_960_720" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\cooperation-1301850_960_720.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="imgNoticias" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\imgNoticias.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="business_application_addmale_useradd_insert_add_user_client_2312" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\business_application_addmale_useradd_insert_add_user_client_2312.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="kisspng-computer-icons-pencil-drawing-symbol-edit-and-release-5adebde895c257.0318660915245470486134" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\kisspng-computer-icons-pencil-drawing-symbol-edit-and-release-5adebde895c257.0318660915245470486134.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="image_icon_delete_pic_512x512" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\image_icon_delete_pic_512x512.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
 </root>

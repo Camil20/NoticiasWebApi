@@ -26,7 +26,10 @@ namespace NoticiasWinForms
 
         private void btnRegistrarArticulo_Click(object sender, EventArgs e)
         {
-            
+            this.Hide();
+            RegistrarArticulos ra = new RegistrarArticulos();
+            ra.ShowDialog();
+
                 
         }
     }

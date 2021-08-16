@@ -29,6 +29,7 @@ namespace NoticiasWinForms
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(GestionArticulos));
             this.pictureBox4 = new System.Windows.Forms.PictureBox();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
@@ -47,6 +48,7 @@ namespace NoticiasWinForms
             // 
             // pictureBox4
             // 
+            this.pictureBox4.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox4.Image")));
             this.pictureBox4.Location = new System.Drawing.Point(421, 166);
             this.pictureBox4.Name = "pictureBox4";
             this.pictureBox4.Size = new System.Drawing.Size(181, 160);
@@ -56,6 +58,7 @@ namespace NoticiasWinForms
             // 
             // pictureBox2
             // 
+            this.pictureBox2.Image = global::NoticiasWinForms.Properties.Resources.discovery_icon;
             this.pictureBox2.Location = new System.Drawing.Point(225, 166);
             this.pictureBox2.Name = "pictureBox2";
             this.pictureBox2.Size = new System.Drawing.Size(171, 160);
@@ -65,6 +68,7 @@ namespace NoticiasWinForms
             // 
             // pictureBox1
             // 
+            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
             this.pictureBox1.Location = new System.Drawing.Point(21, 166);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(173, 160);
@@ -131,6 +135,7 @@ namespace NoticiasWinForms
             // 
             // pictureBox3
             // 
+            this.pictureBox3.Image = global::NoticiasWinForms.Properties.Resources.image_icon_delete_pic_512x512;
             this.pictureBox3.Location = new System.Drawing.Point(623, 166);
             this.pictureBox3.Name = "pictureBox3";
             this.pictureBox3.Size = new System.Drawing.Size(181, 160);

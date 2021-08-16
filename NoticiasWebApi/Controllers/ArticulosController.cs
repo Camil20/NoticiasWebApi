@@ -11,6 +11,8 @@ using NoticiasWebApi.Models;
 
 namespace NoticiasWebApi.Controllers
 {
+
+
     [Route("api/[controller]")]
     [ApiController]
     public class ArticulosController : ControllerBase
@@ -46,7 +48,7 @@ namespace NoticiasWebApi.Controllers
 
         [HttpGet("{busqueda}")]
         [AllowAnonymous]
-        public async Task<ActionResult<Articulo>> GetArticle(String busqueda)
+        public async Task<ActionResult<Articulo>> GetArticulo(String busqueda)
         {
             var query = _context.Articulos.AsQueryable().Where(a => a.Titulo.Contains(busqueda));
 
@@ -72,9 +74,38 @@ namespace NoticiasWebApi.Controllers
 
         }
 
-        //public async Task<ActionResult<IEnumerable<Articulo>>> GetArticulos()
-        //{
-        //    return await _context.Articulos.Select(item => new Articulo {
+        public async Task<ActionResult<IEnumerable<Articulo>>> GetArticulos()
+        {
+            var articulo = await (from Articulo in _context.Articulos
+                                  join Autore in _context.Autores
+                                  on Articulo.AutorId equals Autore.AutorId
+                                  join Categoria in _context.Categorias
+                                  on Articulo.CategoriaId equals Categoria.CategoriaId
+                                  join Fuente in _context.Fuentes
+                                  on Articulo.FuenteId equals Fuente.FuenteId
+                                  join Paise in _context.Paises
+                                  on Articulo.PaisId equals Paise.PaisId
+                                  select new
+                                  {
+                                      Articulo.ArticuloId,
+                                      Fuente = Fuente.NombreFuente,
+                                      AutorId = Autore.AutorId,
+                                      Autor = Autore.NombreAutor,
+                                      Articulo.Titulo,
+                                      Articulo.Descripcion,
+                                      Articulo.Contenido,
+                                      Articulo.Url,
+                                      Articulo.UrlToImage,
+                                      Articulo.FechaPublicacion,
+                                      Articulo.CategoriaId,
+                                      NombreCategoria = Categoria.NombreCategoria,
+                                      Articulo.PaisId,
+                                      NombrePais = Paise.NombrePais
+
+                                  }).ToListAsync();
+            return Ok(articulo);
+        }
+
 
         //    ArticuloId = item.ArticuloId,
         //    Titulo = item.Titulo,
@@ -89,24 +120,52 @@ namespace NoticiasWebApi.Controllers
         //    //FuenteId = item.FuenteId
 
         //    }).ToListAsync();
-        //}
 
-        // GET: api/Articulos/5
-        //[HttpGet("{id}")]
-        //public async Task<ActionResult<Articulo>> GetArticulo(int id)
-        //{
-        //    var articulo = await _context.Articulos.FindAsync(id);
 
-        //    if (articulo == null)
-        //    {
-        //        return NotFound();
-        //    }
+        //GET: api/Articulos/5
+        //[ActionName(nameof(GetArticle))]
+        [HttpGet("{q}")]
+        [AllowAnonymous]
+        public async Task<ActionResult<Articulo>> GetArticulos(/*int id*/ string q = null, string cat = null, int id = 0)
+        {
+            var articulo = await (from Articulo in _context.Articulos
+                                  join Autore in _context.Autores
+                                  on Articulo.AutorId equals Autore.AutorId
+                                  join Categoria in _context.Categorias
+                                  on Articulo.CategoriaId equals Categoria.CategoriaId
+                                  join Fuente in _context.Fuentes
+                                  on Articulo.FuenteId equals Fuente.FuenteId
+                                  join Paise in _context.Paises
+                                  on Articulo.PaisId equals Paise.PaisId
+                                  select new
+                                  {
+                                      Articulo.ArticuloId,
+                                      Fuente = Fuente.NombreFuente,
+                                      AutorId = Autore.AutorId,
+                                      Autor = Autore.NombreAutor,
+                                      Articulo.Titulo,
+                                      Articulo.Descripcion,
+                                      Articulo.Contenido,
+                                      Articulo.Url,
+                                      Articulo.UrlToImage,
+                                      Articulo.FechaPublicacion,
+                                      CategoriaId = Categoria.CategoriaId,
+                                      NombreCategoria = Categoria.NombreCategoria,
+                                      PaisId = Paise.PaisId,
+                                      //NombrePais = Paise.NombrePais
 
-        //    return articulo;
-        //}
+                                  }).FirstOrDefaultAsync(x => q != null ? x.Titulo.Contains(q) : id != 0 ? x.ArticuloId == id : cat != null ? x.NombreCategoria == cat : x.Titulo == "");
+
+            if (articulo == null)
+            {
+                return NotFound();
+            }
+
+            return Ok(articulo);
+        }
 
         // PUT: api/Articulos/5
-        // To protect from overposting attacks, see https://go.microsoft.com/fwlink/?linkid=2123754
+
         [HttpPut("{id}")]
         public async Task<IActionResult> PutArticulo(int id, Articulo articulo)
         {
@@ -137,8 +196,9 @@ namespace NoticiasWebApi.Controllers
         }
 
         // POST: api/Articulos
-        // To protect from overposting attacks, see https://go.microsoft.com/fwlink/?linkid=2123754
+
         [HttpPost]
+        [AllowAnonymous]
         public async Task<ActionResult<Articulo>> PostArticulo(Articulo articulo)
         {
             _context.Articulos.Add(articulo);
@@ -169,3 +229,6 @@ namespace NoticiasWebApi.Controllers
         }
     }
 }
+
+
+
